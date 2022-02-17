@@ -10,6 +10,9 @@ namespace _1610_Scripting_Practice
     {
         static void Main(string[] args)
         {
+            Operators operatorDemo = new Operators();
+            operatorDemo.myOperators();
+
             // a list of variables with examples
             int myInt = 12;
             double myDecimal = 12.25;
