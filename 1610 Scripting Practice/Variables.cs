@@ -13,6 +13,9 @@ namespace _1610_Scripting_Practice
             Operators operatorDemo = new Operators();
             operatorDemo.myOperators();
 
+            Conditionals conditionalsDemo = new Conditionals();
+            conditionalsDemo.myConditionals();
+
             // a list of variables with examples
             int myInt = 12;
             double myDecimal = 12.25;
@@ -36,7 +39,9 @@ namespace _1610_Scripting_Practice
                 Console.WriteLine("I'm sorry to hear that.");
             }
 
-            while (true) ;
+            Console.WriteLine("Press Enter to exit.");
+            Console.ReadLine();
+
 
         }
     }
