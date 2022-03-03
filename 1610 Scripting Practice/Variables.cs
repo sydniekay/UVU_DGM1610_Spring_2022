@@ -22,6 +22,10 @@ namespace _1610_Scripting_Practice
             WhileLoops whileLoopsDemo = new WhileLoops();
             whileLoopsDemo.myWhileLoops();
 
+            ForLoopsWithArrays forLoopsWithArraysDemo = new ForLoopsWithArrays();
+            forLoopsWithArraysDemo.myForLoops();
+
+
 
 
             // a list of variables with examples
