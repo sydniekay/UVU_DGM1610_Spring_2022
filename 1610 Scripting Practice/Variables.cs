@@ -19,6 +19,10 @@ namespace _1610_Scripting_Practice
             Switches switchesDemo = new Switches();
             switchesDemo.mySwitches();
 
+            WhileLoops whileLoopsDemo = new WhileLoops();
+            whileLoopsDemo.myWhileLoops();
+
+
 
             // a list of variables with examples
             int myInt = 12;
