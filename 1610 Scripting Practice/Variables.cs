@@ -10,6 +10,8 @@ namespace _1610_Scripting_Practice
     {
         static void Main(string[] args)
         {
+            // These are all calling out the different scripts within this folder. 
+            
             Operators operatorDemo = new Operators();
             operatorDemo.myOperators();
 
@@ -24,6 +26,9 @@ namespace _1610_Scripting_Practice
 
             ForLoopsWithArrays forLoopsWithArraysDemo = new ForLoopsWithArrays();
             forLoopsWithArraysDemo.myForLoops();
+
+            ForEachLoopsWithArrays forEachLoopsWithArraysDemo = new ForEachLoopsWithArrays();
+            forEachLoopsWithArraysDemo.myForEachLoops();
 
 
 
