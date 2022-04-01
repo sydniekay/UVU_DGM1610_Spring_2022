@@ -1,4 +1,5 @@
-# Prototype 3 - Challenge 3
+# Prototype 3 
+## Challenge 3
 ### Fixed Bugs:
 
 - The balloon would not float back up when space key was pressed
