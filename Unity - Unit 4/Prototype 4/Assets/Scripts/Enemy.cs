@@ -18,7 +18,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Enemy follows the player
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed);
+
+        // Enemy destroyed when it falls off platform
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
