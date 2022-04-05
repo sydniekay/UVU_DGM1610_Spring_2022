@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
      * Must have small delay between sprays
      */
 
-    private float speed = 7f;
+    public float speed;
     private float xBounds = 7.0f;
     private Rigidbody playerRb;
+
+    public GameObject projectilePrefab;
 
 
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         PlayerBounds();
+        ProjectileLaunch();
     }
 
     // Moves the player based on arrow key input
@@ -49,6 +52,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(-xBounds, transform.position.y, transform.position.z);
             playerRb.velocity = Vector3.zero;
+        }
+    }
+    void ProjectileLaunch()
+    {
+        // Projectile comes from spray bottle when spacebar is pressed
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+
         }
     }
 }

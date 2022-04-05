@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Butterfly
+  - Ladybug
+  - Bee
+  - Beetle
+  - Health
+  - Spray
   layers:
   - Default
   - TransparentFX
