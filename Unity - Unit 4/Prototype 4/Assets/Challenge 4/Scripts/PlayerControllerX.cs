@@ -14,7 +14,10 @@ public class PlayerControllerX : MonoBehaviour
 
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
-    
+
+    public float turboSpeed;
+    public ParticleSystem smokeParticle;
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -29,6 +32,8 @@ public class PlayerControllerX : MonoBehaviour
 
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
+
+        TurboBoost();
 
     }
 
@@ -75,5 +80,20 @@ public class PlayerControllerX : MonoBehaviour
     }
 
 
+    /* If player presses spacebar they get a turbo boost
+     * The turbo boost can only last a certain amount of time (add a coroutine)
+     * You can only press spacebar once every so-odd seconds
+     * smoke particle should play when boost is pressed
+     */
+    private void TurboBoost()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRb.AddForce(focalPoint.transform.forward * turboSpeed, ForceMode.Impulse);
+            smokeParticle.Play();
+        }
+    }
 
+    // Coroutine for the turbo boost
+    //IEnumerator BoostCooldown(float)
 }

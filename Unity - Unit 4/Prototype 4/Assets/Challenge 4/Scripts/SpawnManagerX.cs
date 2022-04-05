@@ -13,6 +13,7 @@ public class SpawnManagerX : MonoBehaviour
 
     public int enemyCount;
     public int waveCount = 1;
+    private EnemyX
 
 
     public GameObject player; 
@@ -57,7 +58,7 @@ public class SpawnManagerX : MonoBehaviour
 
         waveCount++;
         ResetPlayerPosition(); // put player back at start
-
+       
     }
 
     // Move player back to position in front of own goal
