@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
     public GameObject titleScreen;
+
     public bool isGameActive;
     private float spawnRate = 1.0f;
     private int score;
