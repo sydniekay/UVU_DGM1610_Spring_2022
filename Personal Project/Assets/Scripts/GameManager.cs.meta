@@ -3,7 +3,9 @@ guid: 2357014381737df428c0d6eace0183f6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthPrefab: {fileID: 2583657918009933945, guid: 18c94d038a7cddc4ca828100642029c5, type: 3}
+  - projectile: {fileID: 3039095944323841281, guid: a2b4c1b12f6ad1f4fa0b36ec71a3040b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

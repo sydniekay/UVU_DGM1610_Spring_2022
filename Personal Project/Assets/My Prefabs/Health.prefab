@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2561053274798665173}
   - component: {fileID: 2584716761121048606}
   - component: {fileID: 4815924075297531399}
+  - component: {fileID: -4242933410490337489}
+  - component: {fileID: -6352942339055876873}
   m_Layer: 0
   m_Name: Health
   m_TagString: Health
@@ -109,3 +111,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  rotateSpeed: 60
+  health: {fileID: 0}
+--- !u!114 &-4242933410490337489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583657918009933945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c3642f60befa541aee9630db37038c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6352942339055876873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2583657918009933945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efaf3120197ce984da179c2257e3f01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 360

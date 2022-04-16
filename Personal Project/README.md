@@ -29,14 +29,18 @@
 - 4/16/22: Things that are working: 
     - Targets spawn from a list
     - Clicking a beetle with the mouse will destroy the object
+    - Random Enemies spawn every second
+    - Enemies are destroyed out of bounds on x axis
+    - Enemies spawn on either side of the screen
+    - Health spawns on either side of the screen
+    - Health rotates continuously as it moves across the screen
    
    Things I need to get working:
-    - Targets only spawn once
-    - Targets only spawn from a specific X coordinate on the screen
     - Projectile needs to travel in the direction of the mouse
-    - Waves of enemies need to increase
-    - Destroy out of bounds
+    - three difficulty levels (change how quickly enemies spawn, and speeds) instead of a wave feature
     - Turret needs to rotate with the direction of the mouse
+    - Lose a life when you miss a beetle (3 lives total)
+    - Gain a life when you hit a health gem
 
 
 

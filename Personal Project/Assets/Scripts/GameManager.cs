@@ -12,18 +12,22 @@ public class GameManager : MonoBehaviour
      * Reference Prototypes 4 and 5
      */
 
-    public List<GameObject> targets;
+    public List<GameObject> enemyPrefabs;
+    public GameObject healthPrefab;
+    public GameObject projectile;
 
-    private float xRange = 5;
-    private float yRangeTop = 6;
+    private float xStart = 11;
+    private float yRangeTop = 5;
     private float yRangeBottom = 1;
+    private float zPath = 5;
 
-
+    private float lastSpawnTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnRandomEnemy();
+        StartCoroutine(SpawnRandomEnemy());
+        StartCoroutine(SpawnRandomHealth());
     }
 
     // Update is called once per frame
@@ -32,12 +36,44 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void SpawnRandomEnemy()
+    private float PickASign()
     {
-        int enemyIndex = Random.Range(0, targets.Count);
-        Vector3 spawnPos = new Vector3(-xRange, Random.Range(yRangeBottom, yRangeTop), 0);
+        // this is generating either a 1 or -1 to tell whether enemies spawn on the left or right side of screen
+        int sign = Random.Range(0, 2) * 2 - 1;
+        return sign;
+ 
+    }
+    IEnumerator SpawnRandomEnemy()
+    {
+        while (true)
+        {
+            float sign = PickASign();
+            float xSide = sign * xStart;
 
-        Instantiate(targets[enemyIndex].transform, spawnPos, targets[enemyIndex].transform.rotation);
+            int enemyIndex = Random.Range(0, enemyPrefabs.Count);
+            Vector3 spawnPos = new Vector3(xSide, Random.Range(yRangeBottom, yRangeTop), zPath);
 
+            Instantiate(enemyPrefabs[enemyIndex].transform, spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
+
+            yield return new WaitForSeconds(1);
+
+        }
+    }
+
+    IEnumerator SpawnRandomHealth()
+    {
+        while (true)
+        {
+            float sign = PickASign();
+            float xSide = sign * xStart;
+
+            Vector3 spawnPos = new Vector3(xSide, Random.Range(yRangeBottom, yRangeTop), zPath);
+
+            Instantiate(healthPrefab.transform, spawnPos, healthPrefab.transform.rotation);
+
+
+
+            yield return new WaitForSeconds(3);
+        }
     }
 }

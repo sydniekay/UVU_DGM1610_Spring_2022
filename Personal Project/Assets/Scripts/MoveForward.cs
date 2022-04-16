@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Targets : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
     public float speed = 20;
+    public float rotateSpeed = 60;
+
+    public GameObject health;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +18,7 @@ public class Targets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveEnemy();
+        MoveTarget();
     }
 
     private void OnMouseDown()
@@ -23,8 +26,9 @@ public class Targets : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void MoveEnemy()
+    void MoveTarget()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
     }
+
 }
