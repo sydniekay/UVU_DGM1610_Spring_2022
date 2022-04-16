@@ -3,7 +3,12 @@ guid: 38956a589e66d4f49a760ad1a2f35825
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - butterflyPrefab: {fileID: 3623110716226293805, guid: 129d0b700c2ff0d42a04b29eee0e95b6, type: 3}
+  - beePrefab: {fileID: 1960858825419770435, guid: ba34ac0dfa017a34a9878acbbdcec4d2, type: 3}
+  - ladybugPrefab: {fileID: 296354433258235182, guid: 2a7ad728a865dfc4eb095f90ab54ad2a, type: 3}
+  - beetlePrefab: {fileID: 1231486707327316958, guid: 5d2bb32a5a9d7004ea969ce8792cd8cf, type: 3}
+  - healthPrefab: {fileID: 3458216976073983290, guid: c51de33406dae4240a4acedab1f625d7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
