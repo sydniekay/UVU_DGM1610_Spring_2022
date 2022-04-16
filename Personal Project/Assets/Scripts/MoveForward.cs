@@ -7,8 +7,6 @@ public class MoveForward : MonoBehaviour
     public float speed = 20;
     public float rotateSpeed = 60;
 
-    public GameObject health;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +26,17 @@ public class MoveForward : MonoBehaviour
 
     void MoveTarget()
     {
-        transform.Translate(Vector3.right * Time.deltaTime * speed, Space.World);
+        float direction = getDirection(gameObject.transform.localScale.z);
+        transform.Translate(Vector3.left * Time.deltaTime * speed * direction, Space.World);
+    }
+
+    private float getDirection(float scaleFactor)
+    {
+        if (scaleFactor < 0)
+        {
+            return -1;
+        }
+        return 1;
     }
 
 }

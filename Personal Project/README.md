@@ -34,12 +34,15 @@
     - Enemies spawn on either side of the screen
     - Health spawns on either side of the screen
     - Health rotates continuously as it moves across the screen
+    - Enemies spawn facing the right direction based on what side they enter from
+    - Enemies and health travel in the direction they are facing
    
    Things I need to get working:
     - Projectile needs to travel in the direction of the mouse
     - three difficulty levels (change how quickly enemies spawn, and speeds) instead of a wave feature
     - Turret needs to rotate with the direction of the mouse
     - Lose a life when you miss a beetle (3 lives total)
+    - Keep score, faster bugs are more points
     - Gain a life when you hit a health gem
 
 

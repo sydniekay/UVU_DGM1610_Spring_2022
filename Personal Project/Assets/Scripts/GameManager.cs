@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     private float yRangeBottom = 1;
     private float zPath = 5;
 
-    private float lastSpawnTime;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,37 +41,42 @@ public class GameManager : MonoBehaviour
         return sign;
  
     }
-    IEnumerator SpawnRandomEnemy()
-    {
-        while (true)
-        {
-            float sign = PickASign();
-            float xSide = sign * xStart;
-
-            int enemyIndex = Random.Range(0, enemyPrefabs.Count);
-            Vector3 spawnPos = new Vector3(xSide, Random.Range(yRangeBottom, yRangeTop), zPath);
-
-            Instantiate(enemyPrefabs[enemyIndex].transform, spawnPos, enemyPrefabs[enemyIndex].transform.rotation);
-
-            yield return new WaitForSeconds(1);
-
-        }
-    }
 
     IEnumerator SpawnRandomHealth()
     {
         while (true)
         {
-            float sign = PickASign();
-            float xSide = sign * xStart;
+            SpawnToRandomPosition(healthPrefab);
 
-            Vector3 spawnPos = new Vector3(xSide, Random.Range(yRangeBottom, yRangeTop), zPath);
-
-            Instantiate(healthPrefab.transform, spawnPos, healthPrefab.transform.rotation);
-
-
-
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(7);
         }
+    }
+
+    IEnumerator SpawnRandomEnemy()
+    {
+        while (true)
+        {
+            int enemyIndex = Random.Range(0, enemyPrefabs.Count);
+
+            SpawnToRandomPosition(enemyPrefabs[enemyIndex]);
+
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    private void SpawnToRandomPosition(GameObject prefab)
+    {
+        float sign = PickASign();
+        float xSide = sign * xStart;
+
+        Vector3 spawnPos = new Vector3(xSide, Random.Range(yRangeBottom, yRangeTop), zPath);
+
+        Transform objectTransform = Instantiate(prefab.transform, spawnPos, prefab.transform.rotation);
+        objectTransform.transform.localScale = 
+            new Vector3(
+                objectTransform.transform.localScale.x, 
+                objectTransform.transform.localScale.y, 
+                objectTransform.transform.localScale.z * sign
+            );
     }
 }
