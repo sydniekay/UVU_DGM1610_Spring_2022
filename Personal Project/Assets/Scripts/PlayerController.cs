@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
      * Collisions/Triggers
      * Random Spawn position
      * Mouse controls
+     * Differing speeds of enemies
      * 
      * Reference Prototypes 4 and 5
      */

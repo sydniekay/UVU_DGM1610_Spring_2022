@@ -26,6 +26,18 @@
 
     My current plan is to replace my placeholder assets with the actual game assets, leave the environment how I have it for now, and write some brand new scripts organizing them better  by using a GameManager script. Essentially, for basic gameplay to be working how I want I need to have player controls (using the mouse), enemy spawning (randomized locations and varying speeds), and a wave system for increasing difficulty. 
 
+- 4/16/22: Things that are working: 
+    - Targets spawn from a list
+    - Clicking a beetle with the mouse will destroy the object
+   
+   Things I need to get working:
+    - Targets only spawn once
+    - Targets only spawn from a specific X coordinate on the screen
+    - Projectile needs to travel in the direction of the mouse
+    - Waves of enemies need to increase
+    - Destroy out of bounds
+    - Turret needs to rotate with the direction of the mouse
+
 
 
 

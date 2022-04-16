@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Butterfly
-  - Ladybug
-  - Bee
-  - Beetle
   - Health
-  - Spray
+  - Enemy
   layers:
   - Default
   - TransparentFX
