@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb9025abf49dcf4d83b59cf4878728b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horsePower: 100
+  horsePower: 5000
   horizontalInput: 0
   forwardInput: 0
   centerOfMass: {fileID: 2098178029}
@@ -455,7 +455,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314304188}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
