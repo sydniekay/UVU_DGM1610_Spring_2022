@@ -1209,6 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1007274691}
   - component: {fileID: 1007274692}
+  - component: {fileID: 1007274693}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -1246,6 +1247,21 @@ MonoBehaviour:
   - {fileID: 2178073922435996824, guid: 1d143480adadf43389395930eee2b5cf, type: 3}
   - {fileID: 4524317531697499709, guid: a325bcb65fd94414191d0ddc2514e2dc, type: 3}
   - {fileID: 7945815000853930370, guid: fc41e6839a5494e0cbaea5f0081c271d, type: 3}
+--- !u!114 &1007274693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007274690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c0e1f24e2ce4a5b9bf1f3a7499cd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 1522426145190426034, guid: 0454abd25f24c024c8a67d36dfbc0c06, type: 3}
+  amountToPool: 20
 --- !u!1 &1025854373
 GameObject:
   m_ObjectHideFlags: 0
