@@ -16,10 +16,14 @@ public class GameManager : MonoBehaviour
     public GameObject healthPrefab;
     public GameObject projectile;
 
+
     private float xStart = 11;
     private float yRangeTop = 5;
     private float yRangeBottom = 1;
     private float zPath = 5;
+
+    private const int leftMouseButton = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +35,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        SpawnProjectile();
     }
 
     private float PickASign()
@@ -78,5 +82,14 @@ public class GameManager : MonoBehaviour
                 objectTransform.transform.localScale.y, 
                 objectTransform.transform.localScale.z * sign
             );
+    }
+
+    private void SpawnProjectile()
+    {
+        if (Input.GetMouseButtonDown(leftMouseButton))
+        {
+            GameObject bulletPosition = GameObject.Find("BulletPosition");
+            Instantiate(projectile, bulletPosition.transform.position, bulletPosition.transform.rotation);
+        }
     }
 }
