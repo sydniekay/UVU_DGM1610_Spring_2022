@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Turret
   - BulletPosition
+  - FireFX
   layers:
   - Default
   - TransparentFX

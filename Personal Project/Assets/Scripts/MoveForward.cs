@@ -19,10 +19,6 @@ public class MoveForward : MonoBehaviour
         MoveTarget();
     }
 
-    private void OnMouseDown()
-    {
-        Destroy(gameObject);
-    }
 
     void MoveTarget()
     {

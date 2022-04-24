@@ -1,5 +1,5 @@
 # Personal Project - Beetle Blast
-## Player Controls
+## Initial Brainstorming
 ### Current Working Features:
 - Player can move left and right with the arrow keys
 - Player is constrained to bounds
@@ -21,7 +21,8 @@
 - Insects come from all directions instead of just moving bottom to top
 - Edit trigger controls on objects
 
-### Log:
+
+## Game Dev Log:
 - 4/15/22: As I was working with my code today to fix some of the functionality I had implemented last week I came to the conclusion that I wanted to change pretty much all of the game mechanics that I had made previously. This was especially influenced by the free assets available through the Unity Store, and some of the new functionalities that we learned working on Prototype 5. That being said, it became apparent that it would be much faster for me to simply scrap my scripts and replace my assets and almost start over than to try and walk through all of my previously written code and work around it.
 
     My current plan is to replace my placeholder assets with the actual game assets, leave the environment how I have it for now, and write some brand new scripts organizing them better  by using a GameManager script. Essentially, for basic gameplay to be working how I want I need to have player controls (using the mouse), enemy spawning (randomized locations and varying speeds), and a wave system for increasing difficulty. 
@@ -44,6 +45,24 @@
     - Lose a life when you miss a beetle (3 lives total)
     - Keep score, faster bugs are more points
     - Gain a life when you hit a health gem
+
+- 4/23/22: 
+    Couple change of plans as far as functionality goes, I decided it would make more sense to have a score system with a timer and have the gems act as +10 seconds for a game that has a high score motivator. 
+
+    Things that are working (in addition to previous things that were already working):
+    - Cannon barrel follows mouse
+    - Projectile follows cannon direction and rotation
+    - Game objects destroyed with detect collisons
+    - Added exploding FX
+
+    Things I need to get working:
+    - Destroy instantiated FX after a certain amount of time
+    - Replace mouse cursor with crosshair
+    - Add a score system, including +10 seconds gems for timer
+    - Add a countdown timer
+    - Add three difficulties
+    - Add UI for all of these elements
+    - Add music and sound fx
 
 
 

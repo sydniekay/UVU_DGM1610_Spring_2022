@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyPrefabs;
     public GameObject healthPrefab;
     public GameObject projectile;
+    public ParticleSystem cannonParticle;
 
 
     private float xStart = 11;
@@ -90,6 +91,9 @@ public class GameManager : MonoBehaviour
         {
             GameObject bulletPosition = GameObject.Find("BulletPosition");
             Instantiate(projectile, bulletPosition.transform.position, bulletPosition.transform.rotation);
+
+            cannonParticle.Play();
+
         }
     }
 }

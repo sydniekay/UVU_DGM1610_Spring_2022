@@ -1227,6 +1227,7 @@ GameObject:
   - component: {fileID: 1056996115425183148}
   - component: {fileID: -6532319010874900946}
   - component: {fileID: 7668463634296893160}
+  - component: {fileID: 3734804605438002009}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -1296,8 +1297,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7756352, y: 1.9863236, z: 4.342755}
-  m_Center: {x: -0.003181326, y: 0.9813568, z: 0.2602567}
+  m_Size: {x: 1.1644642, y: 1.9863236, z: 2.548832}
+  m_Center: {x: 0.034714103, y: 0.98135686, z: 0.05888428}
 --- !u!114 &-6532319010874900946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1312,7 +1313,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotateSpeed: 0
-  health: {fileID: 0}
 --- !u!114 &7668463634296893160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1325,6 +1325,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c3642f60befa541aee9630db37038c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3734804605438002009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058124654572798990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cb2f75d136fa949b4085286433a3b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
 --- !u!1 &1058153880430590634
 GameObject:
   m_ObjectHideFlags: 0
