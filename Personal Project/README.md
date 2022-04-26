@@ -64,6 +64,20 @@
     - Add UI for all of these elements
     - Add music and sound fx
 
+- 4/25/22:
+
+    Things that are working (in addition to previous things):
+    - Added background music
+    - Added sound fx for bugs, gems, and bullets
+    - Added a score counter, and a point value for each bug
+    - Added a title
+
+    Things I have left to do:
+    - Replace cursor with crosshair
+    - Add a countdown timer
+    - Make the gem add 20 seconds to the timer
+    - Add game over when timer goes out
+    - Add start and restart buttons
 
 
 
