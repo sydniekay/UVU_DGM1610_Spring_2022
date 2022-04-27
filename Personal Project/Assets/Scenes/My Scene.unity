@@ -771,7 +771,7 @@ MonoBehaviour:
   projectile: {fileID: 9064299551172963327, guid: a2b4c1b12f6ad1f4fa0b36ec71a3040b, type: 3}
   cannonParticle: {fileID: 1923956218}
   isGameActive: 0
-  beginningTime: 20
+  beginningTime: 30
 --- !u!82 &706968510
 AudioSource:
   m_ObjectHideFlags: 0
