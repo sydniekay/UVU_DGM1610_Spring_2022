@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         {
             SpawnToRandomPosition(healthPrefab);
 
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(9);
         }
     }
 
