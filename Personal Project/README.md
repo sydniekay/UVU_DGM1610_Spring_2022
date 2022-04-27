@@ -79,6 +79,18 @@
     - Add game over when timer goes out
     - Add start and restart buttons
 
+- 4/26/22:
+
+    Things that are working (in addition to previous things):
+    - Replaced cursor with crosshair
+    - Added a countdown timer
+    - Added the gems to be +10 seconds, and made their spawning intervals as 9 seconds
+    - Game over is working
+    - All UI turns on and off when it should
+    - All buttons function
+    - WE'VE GOT OURSELVES A PLAYABLE GAME!!
+
+
 
 
 

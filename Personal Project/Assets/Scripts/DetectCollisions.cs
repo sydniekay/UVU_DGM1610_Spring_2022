@@ -11,6 +11,7 @@ public class DetectCollisions : MonoBehaviour
     public AudioClip destroySound;
 
     [SerializeField] int pointValue;
+    [SerializeField] int timeValue;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,16 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (gameManager.isGameActive)
+        {
+            Destroy(gameObject);
 
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
 
-        AudioSource.PlayClipAtPoint(destroySound, new Vector3(0f, 2.3f, -10f));
+            AudioSource.PlayClipAtPoint(destroySound, new Vector3(0f, 2.3f, -10f));
 
-        gameManager.UpdateScore(pointValue);
+            gameManager.UpdateScore(pointValue);
+            gameManager.AddToTimer(timeValue);
+        }
     }
 }

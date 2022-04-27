@@ -153,7 +153,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
   destroySound: {fileID: 8300000, guid: 67357478fa899460198f84822b54cc8d, type: 3}
-  pointValue: 30
+  pointValue: 0
+  timeValue: 10
 --- !u!82 &9191060399493795970
 AudioSource:
   m_ObjectHideFlags: 0

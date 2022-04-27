@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
+    public Button restartButton;
+    public Button startButton;
 
     private AudioSource managerAudio;
     public AudioClip shootSound;
@@ -28,28 +31,25 @@ public class GameManager : MonoBehaviour
     public GameObject projectile;
     public ParticleSystem cannonParticle;
 
-
-
     private float xStart = 11;
     private float yRangeTop = 5;
     private float yRangeBottom = 1;
     private float zPath = 5;
     private int score;
+    private int gameTimer;
+    public bool isGameActive;
 
     private const int leftMouseButton = 0;
+    public int beginningTime;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnRandomEnemy());
-        StartCoroutine(SpawnRandomHealth());
-
         managerAudio = GetComponent<AudioSource>();
 
-        score = 0;
-        UpdateScore(score);
- 
+        scoreText.text = " ";
+        timerText.text = " ";
     }
 
     // Update is called once per frame
@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
     {
         SpawnProjectile();
     }
+
+
 
     private float PickASign()
     {
@@ -68,17 +70,17 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnRandomHealth()
     {
-        while (true)
+        while (isGameActive)
         {
             SpawnToRandomPosition(healthPrefab);
 
-            yield return new WaitForSeconds(7);
+            yield return new WaitForSeconds(10);
         }
     }
 
     IEnumerator SpawnRandomEnemy()
     {
-        while (true)
+        while (isGameActive)
         {
             int enemyIndex = Random.Range(0, enemyPrefabs.Count);
 
@@ -106,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnProjectile()
     {
-        if (Input.GetMouseButtonDown(leftMouseButton))
+        if (Input.GetMouseButtonDown(leftMouseButton) && isGameActive)
         {
             GameObject bulletPosition = GameObject.Find("BulletPosition");
             Instantiate(projectile, bulletPosition.transform.position, bulletPosition.transform.rotation);
@@ -118,9 +120,67 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator StartTimer(int timerTotal)
+    {
+        gameTimer = timerTotal;
+
+        while (isGameActive)
+        {
+            PrintTimer();
+
+            yield return new WaitForSeconds(1);
+            gameTimer -= 1;
+
+            if(gameTimer == 0)
+            {
+                GameOver();
+            }
+        }
+    }
+
+    public void AddToTimer(int timeToAdd)
+    {
+        gameTimer += timeToAdd;
+        PrintTimer();
+    }
+
+    private void PrintTimer()
+    {
+        timerText.text = "Timer: " + gameTimer;
+    }
+
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
+
+    public void GameOver()
+    {
+        restartButton.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void StartGame()
+    {
+        isGameActive = true;
+        score = 0;
+        UpdateScore(score);
+
+        StartCoroutine(SpawnRandomEnemy());
+        StartCoroutine(SpawnRandomHealth());
+
+        StartCoroutine(StartTimer(beginningTime));
+
+        titleText.gameObject.SetActive(false);
+        startButton.gameObject.SetActive(false);
+
+    }
+
 }

@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
-  destroySound: {fileID: 8300000, guid: dc028d92bd81f4023ae9b67676dad909, type: 3}
+  destroySound: {fileID: 8300000, guid: f928159802e324af2b95417fa6ce3fdf, type: 3}
   pointValue: 15
 --- !u!82 &-5651156851884683340
 AudioSource:
